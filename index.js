@@ -1,5 +1,5 @@
 const { BOT_TOKEN, GROUP_ID, OTP_CHECK_INTERVAL } = require('./config');
-const { initBrowser, loadCookies }                = require('./browser');
+const { initBrowser }                = require('./browser');
 const {
     initBot, getBot,
     setupBotHandlers,
@@ -20,7 +20,7 @@ async function main() {
     if (!GROUP_ID)  { console.error('❌ Missing TELEGRAM_GROUP_ID in .env');  process.exit(1); }
 
     // ── 1. Load saved cookies ──────────────────────────────
-    loadCookies();
+    //loadCookies();
 
     // ── 2. Init Telegram bot + handlers ───────────────────
     const bot = initBot();
